@@ -1,0 +1,47 @@
+<!-- A ne pas utiliser -->
+<!-- <a href="/conatct"></a> -->
+<div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close">
+        <span class="icon-close2 js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div>
+  
+<header class="site-navbar py-4" role="banner">
+  
+    <div class="container">
+      <div class="d-flex align-items-center">
+        <div class="site-logo">
+          <a href="index.html">
+            <img src="assets/images/logo.png" alt="Logo">
+          </a>
+        </div>
+        <div class="ml-auto">
+          <nav class="site-navigation position-relative text-right" role="navigation">
+            <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+              <li ><a class="nav-link">{{actualDate | date : 'YYYY - MM - DD'}}</a></li>
+              <li [routerLinkActive]="['active']"><a routerLink='' class="nav-link">Home</a></li>
+              <li [routerLinkActive]="['active']"><a *ngIf='(firstName)' routerLink='matches' class="nav-link">Matches</a></li>
+              <li [routerLinkActive]="['active']"><a *ngIf='(firstName)' routerLink='players' class="nav-link">Players</a></li>
+              <li [routerLinkActive]="['active']"><a href="blog.html" class="nav-link">Blog</a></li>
+              <li [routerLinkActive]="['active']"><a  routerLink='contact' class="nav-link">Contact</a></li>
+              <li [routerLinkActive]="['active']"><a *ngIf='(firstName)' routerLink='addMatch' class="nav-link">Add Match</a></li>
+              <li [routerLinkActive]="['active']"><a *ngIf='(firstName)' routerLink='addPlayer' class="nav-link">Add Player</a></li>
+              <li [routerLinkActive]="['active']"><a *ngIf='(firstName)' routerLink='addStadium' class="nav-link">Add Stadium</a></li>
+              <li [routerLinkActive]="['active']"><a *ngIf='!(firstName)' routerLink='signup' class="nav-link">Sign Up</a></li>
+              <li [routerLinkActive]="['active']"><a *ngIf='!(firstName)' routerLink='login' class="nav-link">Log In</a></li>
+              <li [routerLinkActive]="['active']"><a *ngIf='(firstName)' routerLink='admin' class="nav-link">Admin</a></li>
+              <li [routerLinkActive]="['active']"><a *ngIf='(firstName)' (click)='logout()' class="nav-link">Log Out</a></li>
+
+            </ul>
+          </nav>
+
+          <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right text-white"><span
+              class="icon-menu h3 text-white"></span></a>
+        </div>
+      </div>
+    </div>
+
+  </header>

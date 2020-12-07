@@ -1,0 +1,32 @@
+<div class="container mt_30">
+
+    <div class="row ">
+        <div class="col-sm-12 mt_30">
+            <div id="product-tab" class="mt_10">
+                <div class="heading-part mb_10 ">
+                    <h2 class="main_title text-center">Search Player</h2>
+
+                    <div>
+                        <div>
+                        </div>
+                        <div class="tab-content clearfix box">
+                            <div class="" id="">
+                                <div class="">
+                                    <div class="form-group ">
+                                        <input class="form-control text-dark" #searchBox (keyup)="search(searchBox.value)"
+                                            placeholder="Search"  />
+                                    </div>
+                                    <div class="widget-next-match">
+                                        <table class="table custom-table">
+                                            <tr *ngFor="let m of matches | async" >
+                                                <app-score [x]='m'></app-score>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

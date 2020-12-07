@@ -1,0 +1,36 @@
+<div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-9 mx-auto text-center">
+          <h1 class="text-white">Contact</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="site-section bg-dark ">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 ">
+          <form #contactForm="ngForm" (ngSubmit)='addContact()'>
+            <div class="form-group">
+              <input type="text" class="form-control text-dark" [(ngModel)]="contact.firstName"  [ngModelOptions]="{standalone: true}" placeholder="First Name">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control text-dark" [(ngModel)]="contact.lastName" [ngModelOptions]="{standalone: true}" placeholder="Last Name">
+              </div>
+            <div class="form-group">
+              <input type="email" class="form-control text-dark" [(ngModel)]="contact.email" [ngModelOptions]="{standalone: true}" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <textarea name="" class="form-control text-dark" [(ngModel)]="contact.subject" [ngModelOptions]="{standalone: true}" id="" cols="30" rows="10" placeholder="Subject"></textarea>
+            </div>
+            <div class="form-group text-center">
+              <input type="submit" class="btn btn-primary py-3 px-5" value="Send Message">
+            </div>
+          </form>  
+        </div>
+      </div>
+    </div>
+  </div>

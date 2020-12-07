@@ -1,0 +1,102 @@
+<div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-9 mx-auto text-center">
+        <h1 class="text-white">Admin
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
+<ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link btn-light active" id="users-tab" data-toggle="tab" href="#users" role="tab" aria-controls="users"
+      aria-selected="true">users</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link btn-light" id="Players-tab" data-toggle="tab" href="#Players" role="tab" aria-controls="Players"
+      aria-selected="false">Players</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link btn-light" id="matchers-tab" data-toggle="tab" href="#matchers" role="tab"
+      aria-controls="matchers" aria-selected="false">matchers</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link btn-light" id="stadiums-tab" data-toggle="tab" href="#stadiums" role="tab"
+      aria-controls="stadiums" aria-selected="false">stadiums</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="users" role="tabpanel" aria-labelledby="users-tab">
+    <table class="table table-dark">
+      <tr>
+        <td>Id</td>
+        <td>Nom</td>
+        <td>Prénom</td>
+        <td>Email</td>
+        <td>Buttons</td>
+      </tr>
+      <tr *ngFor='let u of allUsers'>
+        <td>{{u._id}}</td>
+        <td>{{u.firstName}}</td>
+        <td>{{u.lastName}}</td>
+        <td>{{u.email}}</td>
+        <td>
+          <button class='btn btn-light' (click)='displayId(u._id)'>Display</button>
+          <button class='btn btn-light' (click)='displayId(u._id)'>Edit</button>
+          <button class='btn btn-light' (click)='displayId(u._id)'>Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="tab-pane fade" id="Players" role="tabpanel" aria-labelledby="Players-tab">
+    <table class="table table-dark">
+      <tr>
+        <th>Id</th>
+        <th>Nom</th>
+        <th>date</th>
+        <th>image</th>
+        <th>Button</th>
+      </tr>
+      <tr *ngFor='let p of allPlayers'>
+        <td>{{p._id}}</td>
+        <td>{{p.name}}</td>
+        <td>{{p.date}}</td>
+        <td><img [src]="p.image" style="height: 100px; width: 70px;"></td>
+        <td>
+          <button class="btn btn-danger" (click)='deletePlayer(p._id)'>Delete</button>
+          <button class="btn btn-danger" (click)='editPlayer(p._id)'>Edit</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="tab-pane fade" id="matchers" role="tabpanel" aria-labelledby="matchers-tab">
+    <table class="table table-dark">
+      <tr>
+        <td>Id</td>
+        <td>Team 1</td>
+        <td>Score 1</td>
+        <td>Team 2</td>
+        <td>Score 2</td>
+        <td>Button</td>
+      </tr>
+      <tr *ngFor='let m of allMatches'>
+        <td>{{m._id}}</td>
+        <td>{{m.teamOne}}</td>
+        <td>{{m.scoreOne}}</td>
+        <td>{{m.teamTwo}}</td>
+        <td>{{m.scoreTwo}}</td>
+        <td>
+          <button class="btn btn-info" (click)="display(m._id)">Dispaly</button>
+          <button class="btn btn-light" (click)="edit(m._id)">Edit</button>
+          <button class="btn btn-danger" (click)="delete(m._id)">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="tab-pane fade" id="stadiums" role="tabpanel" aria-labelledby="stadiums-tab">
+    <div *ngFor = 'let s of stadiums'>
+      <app-stadium [s]='s' (newStadiums)='updateStadiums($event)'></app-stadium>
+    </div>
+  </div>
+</div>

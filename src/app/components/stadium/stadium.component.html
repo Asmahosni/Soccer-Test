@@ -1,0 +1,17 @@
+<div class="col-lg-6">
+    <div class="custom-media d-flex">
+      <div class="text">
+          <div class="row">
+            <div class="col-4">
+                Name : {{s.name}}
+              </div>
+            <div class="col-4">
+                Country :{{s.country}}
+            </div>
+            <div class="col-4">
+                Capacity : {{s.capacity}}
+            </div>
+          </div>
+          <button class="btn btn-danger" (click)="delete(s._id)">Delete</button>
+    </div>
+  </div>

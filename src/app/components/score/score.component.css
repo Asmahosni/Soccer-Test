@@ -1,0 +1,12 @@
+.winner{
+    font-size: 50px;
+    color: aqua;
+}
+.loser{
+    font-size: 15px;
+    color : yellow;
+}
+.drawer{
+    font-size: 30px;
+    color: blue;
+}
